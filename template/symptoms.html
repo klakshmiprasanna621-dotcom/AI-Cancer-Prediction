@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancer Information</title>
+
+    <style>
+
+        body{
+            background:#f4f8fb;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .navbar{
+            background:#0f4c81;
+            padding:15px;
+        }
+
+        .navbar a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-weight:bold;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+            padding:20px;
+
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            width:320px;
+
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0px 0px 10px lightgray;
+
+            text-align:left;
+
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card-title{
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <a href="/">Home</a>
+        <a href="/prediction">Prediction</a>
+        <a href="/cancer_info">Cancer Info</a>
+        <a href="/symptoms">Symptoms</a>
+        <a href="/treatments">Treatments</a>
+        <a href="/hospitals">Hospitals</a>
+        <a href="/patient_resources">Patient Resources</a>
+
+    </div>
+
+    <h1 style="color:rgb(21, 22, 107); text-shadow:2px 2px 5px rgb(244, 237, 237);">
+        Cancer Symptoms
+    </h1>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>🎗 Breast Cancer Symptoms</h2>
+
+            <ul>
+                <li>Breast lump or thickening</li>
+                <li>Changes in breast size or shape</li>
+                <li>Nipple discharge</li>
+                <li>Skin dimpling or irritation</li>
+                <li>Pain in the breast area</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🫁 Lung Cancer Symptoms</h2>
+
+            <ul>
+                <li>Persistent cough</li>
+                <li>Chest pain</li>
+                <li>Shortness of breath</li>
+                <li>Coughing blood</li>
+                <li>Unexplained weight loss</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>⚠ Warning Signs Requiring Medical Attention</h2>
+
+            <ul>
+                <li>Persistent unexplained pain</li>
+                <li>Unusual bleeding</li>
+                <li>Rapid unexplained weight loss</li>
+                <li>Difficulty swallowing</li>
+                <li>Long-lasting fatigue</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Important Note</h2>
+
+            <p>
+                Having one or more symptoms does not necessarily mean
+                a person has cancer. These symptoms may also be caused
+                by other medical conditions. Consult a healthcare
+                professional for proper diagnosis.
+            </p>
+
+        </div>
+    </div>
+</body>

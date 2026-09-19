@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI-Based Cancer Prediction System using Machine Learning</title>
+
+    <style>
+
+        body {
+            background-image: url('https://image.slidesdocs.com/responsive-images/background/illustration-depicting-cancerous-cell-structure-powerpoint-background_81ff747919__960_540.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.95);
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px black;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        input,select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 15px;
+        }
+
+        button {
+            background-color: darkblue;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            width: 80%;
+            margin: auto;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: darkblue;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #0f4c81, #1f7a8c);
+            padding: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0px 3px 10px gray;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: yellow;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <a href="/">Home</a>
+        <a href="/prediction">Prediction</a>
+        <a href="/cancer_info">Cancer Info</a>
+        <a href="/symptoms">Symptoms</a>
+        <a href="/treatments">Treatments</a>
+        <a href="/hospitals">Hospitals</a>
+        <a href="/patient_resources">Patient Resources</a>
+    
+    </div>
+
+    <div class="container">
+
+    <h1>
+        AI Cancer Prediction System
+    </h1>
+    <p>
+        Early Detection using Artificial Intelligence and Machine Learning
+    </p>
+
+    <hr>
+
+    <h2 style="color: darkred;">
+        Early Detection Saves Lives ❤️
+    </h2>
+
+    <p>
+        Our AI-powered healthcare platform analyzes medical parameters
+        and assists in identifying potential cancer risks using
+        Machine Learning technology.
+    </p>
+
+    <hr>
+
+    <h3>Cancer Type Prediction</h3>
+
+    <form action="/predict" method="POST">
+
+        <select name="cancer_type"
+            id="cancer_type"
+            onchange="updateLabels()">
+
+            <option value="breast">
+                Breast Cancer
+            </option>
+
+            <option value="lung">
+                Lung Cancer
+            </option>
+
+        </select>
+
+        <br><br>
+        
+        <div class="input-group">
+
+            <label id="label1">
+                Radius Mean
+            </label>
+
+            <input type="text"
+                name="radius_mean"
+                id="input1"
+                placeholder="Enter Radius Mean"
+                required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label id="label2">
+                Texture Mean
+            </label>
+
+            <input type="text"
+                name="texture_mean"
+                id="input2"
+                placeholder="Enter Texture Mean"
+                required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label id="label3">
+                Perimeter Mean
+            </label>
+
+            <input type="text"
+                name="perimeter_mean"
+                id="input3"
+                placeholder="Enter Perimeter Mean"
+                required>
+
+        </div>
+
+        <br>
+
+        <button type="submit">Predict</button>
+
+        </form>
+        <hr>
+
+        <h3>About Cancer Prediction</h3>
+
+        <p>
+            This AI system analyzes medical patterns
+            to help identify possible cancer risks
+            using Machine Learning algorithms.
+        </p>
+
+        <h2 style="color: {{ color }};">
+            {{ prediction_text }}
+        </h2>
+        
+        <h3>
+            Confidence: {{ confidence }}%
+        </h3>
+
+        <hr>
+
+        <p>
+            Developed using Machine Learning and Flask
+        </p>
+
+        <p>
+            Breast Cancer & Lung Cancer Prediction System
+        </p>
+        <hr>
+        <p>
+            © 2026 AI Healthcare Prediction System
+        </p>
+    </div>
+
+    <script>
+
+    function updateLabels() {
+
+        let cancerType =
+            document.getElementById(
+                "cancer_type"
+            ).value;
+
+        if (cancerType == "breast") {
+
+            document.getElementById(
+                "label1"
+            ).innerText = "Radius Mean";
+
+            document.getElementById(
+                "label2"
+            ).innerText = "Texture Mean";
+
+            document.getElementById(
+                "label3"
+            ).innerText = "Perimeter Mean";
+
+        }
+
+        else {
+
+            document.getElementById(
+                "label1"
+            ).innerText = "Age";
+
+            document.getElementById(
+                "label2"
+            ).innerText = "Smokes";
+
+            document.getElementById(
+                "label3"
+            ).innerText = "AreaQ";
+
+        }
+
+    }
+
+    </script>
+
+</body>
+
+</html>
